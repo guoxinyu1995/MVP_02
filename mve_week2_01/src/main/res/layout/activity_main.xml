@@ -81,7 +81,9 @@
         android:layout_marginRight="25dp"
         android:layout_marginLeft="25dp"
         android:text="提交"
-        android:background="@drawable/btn_shape"
+        android:background="@drawable/selector_button_enabled"
+        android:enabled="false"
+
         />
 
 </android.support.constraint.ConstraintLayout>

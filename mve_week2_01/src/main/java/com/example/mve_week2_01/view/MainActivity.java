@@ -4,11 +4,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.Toast;
 
 import com.example.mve_week2_01.R;
@@ -78,6 +82,23 @@ public class MainActivity extends AppCompatActivity implements Iview,View.OnClic
                 }else{
                     remember.setChecked(false);
                 }
+            }
+        });
+        //判断密码是否是6位数如果是按钮可以点击否则不可点击
+        pass.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                comit.setEnabled(s.length()>=6);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
     }
